@@ -1,20 +1,19 @@
-import React, { useMemo } from 'react'
-import { NavigationContainer } from '@react-navigation/native';
+import React, {useMemo} from 'react';
+import {NavigationContainer} from '@react-navigation/native';
 
 // navigator imports
-import AuthNavigator from './AuthNavigator'
-import AppNavigator from './AppNavigator'
+import AuthNavigator from './AuthNavigator';
+import AppNavigator from './AppNavigator';
 
 const MainNavigator = () => {
-    const isSignedIn = false
+  const isSignedIn = false;
 
-    const renderNavigator = useMemo((): React.ReactNode => isSignedIn ? <AppNavigator /> : <AuthNavigator />, [isSignedIn])
+  const renderNavigator = useMemo(
+    (): React.ReactNode => (isSignedIn ? <AppNavigator /> : <AuthNavigator />),
+    [isSignedIn],
+  );
 
-    return (
-        <NavigationContainer>
-            {renderNavigator}
-        </NavigationContainer>
-    )
-}
+  return <NavigationContainer>{renderNavigator}</NavigationContainer>;
+};
 
-export default MainNavigator
+export default MainNavigator;

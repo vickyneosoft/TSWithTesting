@@ -1,29 +1,24 @@
 import React from 'react';
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 // screen imports
 import LoginScreen from '../../screens/LoginScreen';
-import RegisterScreen from '../../screens/Register';
+import RegisterScreen from '../../screens/RegisterScreen';
 
-const Stack = createNativeStackNavigator()
+const Stack = createNativeStackNavigator();
 
-type AuthNavigatorProps = {
+type AuthNavigatorProps = {};
 
-}
+const AuthNavigator = (_props: AuthNavigatorProps) => {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}>
+      <Stack.Screen name="login" component={LoginScreen} />
+      <Stack.Screen name="register" component={RegisterScreen} />
+    </Stack.Navigator>
+  );
+};
 
-const AuthNavigator = (props: AuthNavigatorProps) => {
-    return (
-        <Stack.Navigator>
-            <Stack.Screen
-                name='login'
-                component={LoginScreen}
-            />
-            <Stack.Screen
-                name='register'
-                component={RegisterScreen}
-            />
-        </Stack.Navigator>
-    )
-}
-
-export default AuthNavigator
+export default AuthNavigator;
