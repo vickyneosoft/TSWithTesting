@@ -14,6 +14,12 @@ import {
   TextStyle,
 } from 'react-native';
 
+export type AppInputAPIs = {
+  setText: (value: string) => void;
+  getText: () => string;
+  focus: () => void;
+};
+
 type AppInputProps = {
   onChangeText: (inputId: string, enteredText: string) => void;
   onSubmitEditing: (inputId: string) => void;
@@ -24,9 +30,9 @@ type AppInputProps = {
  */
 const AppInput = forwardRef(
   (props: AppInputProps & TextInputProps, ref: any) => {
-    const {onChangeText, onSubmitEditing, style} = props;
+    const {onChangeText, onSubmitEditing, style, defaultValue} = props;
 
-    const [value, setValue] = useState<string>('');
+    const [value, setValue] = useState<string>(defaultValue ?? '');
 
     const textInputRef = useRef<TextInput>(null);
 
@@ -40,10 +46,15 @@ const AppInput = forwardRef(
       return value;
     }, [value]);
 
+    // * To focus input from parent
+    const focus = useCallback(() => {
+      textInputRef.current?.focus();
+    }, []);
+
     // * manage component state from parent component using ref
     const initHandler = useCallback(
-      () => ({setText, getText}),
-      [setText, getText],
+      () => ({setText, getText, focus}),
+      [setText, getText, focus],
     );
 
     // * manage text input changes
@@ -73,6 +84,7 @@ const AppInput = forwardRef(
       <TextInput
         returnKeyType="next"
         keyboardType="default"
+        blurOnSubmit={false}
         {...props}
         ref={textInputRef}
         onChangeText={onChangeTextHandler}
