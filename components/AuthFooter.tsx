@@ -1,22 +1,29 @@
-import React from 'react';
-import {StyleSheet} from 'react-native';
+import React, { useMemo } from 'react';
+import { StyleSheet, TextStyle } from 'react-native';
 
 // * Components
 import BoldText from './BoldText';
 import RegularText from './RegularText';
 
 type AuthFooterProps = {
+  testID?: string;
   placeholderText: string;
   btnText: string;
   onPress: () => any;
+  style?: TextStyle
 };
 
 const AuthFooter = (props: AuthFooterProps) => {
-  const {onPress, btnText, placeholderText} = props;
+  const { onPress, btnText, testID, placeholderText, style } = props;
+  const combinedStyle = useMemo(() => StyleSheet.compose(style, styles.signupText), [style])
   return (
-    <RegularText onPress={onPress} style={styles.signupText}>
+    <RegularText
+      testID={testID}
+      onPress={onPress}
+      style={combinedStyle}
+    >
       {placeholderText}
-      <BoldText>{btnText}</BoldText>
+      <BoldText style={{ textDecorationLine: 'underline' }}>{btnText}</BoldText>
     </RegularText>
   );
 };

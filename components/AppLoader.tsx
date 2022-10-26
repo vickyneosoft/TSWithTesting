@@ -1,5 +1,5 @@
 import React from 'react';
-import {ActivityIndicator, Modal, StyleSheet, View} from 'react-native';
+import { ActivityIndicator, Modal, StyleSheet, View } from 'react-native';
 import colors from '../constants/colors';
 
 type AppLoaderProps = {
@@ -7,7 +7,7 @@ type AppLoaderProps = {
 };
 
 const AppLoader = (props: AppLoaderProps) => {
-  const {isVisible} = props;
+  const { isVisible } = props;
   return (
     <Modal
       visible={isVisible}
@@ -17,7 +17,7 @@ const AppLoader = (props: AppLoaderProps) => {
       statusBarTranslucent={true}>
       <View style={styles.container}>
         <View style={styles.loaderContainer}>
-          <ActivityIndicator size={'large'} color={colors.black} />
+          <ActivityIndicator size={'large'} color={colors.grey} />
         </View>
       </View>
     </Modal>

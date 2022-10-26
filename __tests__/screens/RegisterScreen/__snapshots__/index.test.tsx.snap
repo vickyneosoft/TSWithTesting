@@ -1,0 +1,499 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LoginScreen /> rendering LoginScreen screen renders correctly 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "flexGrow": 1,
+    }
+  }
+>
+  <Modal
+    animationType="fade"
+    hardwareAccelerated={false}
+    presentationStyle="overFullScreen"
+    statusBarTranslucent={true}
+    transparent={true}
+    visible={false}
+  />
+  <View
+    style={
+      {
+        "backgroundColor": "#343434",
+        "flex": 1,
+        "justifyContent": "center",
+        "paddingHorizontal": 20,
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "backgroundColor": "#343434",
+          "flex": 1,
+          "justifyContent": "center",
+          "paddingHorizontal": 20,
+        }
+      }
+    >
+      <View
+        style={
+          {
+            "alignItems": "flex-start",
+            "flex": 0.3,
+            "justifyContent": "center",
+          }
+        }
+      >
+        <Text
+          style={
+            [
+              {
+                "fontSize": 14,
+                "fontWeight": "bold",
+              },
+              {
+                "color": "#ffffff",
+                "fontSize": 22,
+              },
+            ]
+          }
+        >
+          Login
+        </Text>
+        <Text
+          style={
+            [
+              {
+                "fontSize": 12,
+              },
+              {
+                "color": "#ffffff",
+              },
+            ]
+          }
+        >
+          Enter your credentials to access account
+        </Text>
+      </View>
+      <View
+        style={
+          {
+            "marginVertical": 10,
+          }
+        }
+      >
+        <TextInput
+          blurOnSubmit={false}
+          keyboardType="email-address"
+          onChangeText={[Function]}
+          onSubmitEditing={[Function]}
+          placeholder="Email"
+          placeholderTextColor="#ffffff"
+          returnKeyType="next"
+          style={
+            {
+              "borderColor": "#ffffff",
+              "borderRadius": 30,
+              "borderWidth": 2,
+              "color": "#ffffff",
+              "height": 55,
+              "overflow": "hidden",
+              "paddingLeft": 20,
+            }
+          }
+          testID="txtEmail"
+          value=""
+        />
+      </View>
+      <View
+        style={
+          {
+            "marginVertical": 10,
+          }
+        }
+      >
+        <TextInput
+          blurOnSubmit={true}
+          keyboardType="default"
+          onChangeText={[Function]}
+          onSubmitEditing={[Function]}
+          placeholder="Password"
+          placeholderTextColor="#ffffff"
+          returnKeyType="next"
+          secureTextEntry={true}
+          style={
+            {
+              "borderColor": "#ffffff",
+              "borderRadius": 30,
+              "borderWidth": 2,
+              "color": "#ffffff",
+              "height": 55,
+              "overflow": "hidden",
+              "paddingLeft": 20,
+            }
+          }
+          testID="txtPassword"
+          value=""
+        />
+      </View>
+      <View
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          [
+            {
+              "alignItems": "center",
+              "backgroundColor": "#ffffff",
+              "borderRadius": 30,
+              "borderWidth": 0.5,
+              "height": 55,
+              "justifyContent": "center",
+            },
+            {
+              "marginTop": 20,
+            },
+          ]
+        }
+        testID="btnSubmit"
+      >
+        <Text
+          style={
+            {
+              "fontSize": 14,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          LOGIN
+        </Text>
+      </View>
+    </View>
+    <Text
+      onPress={[Function]}
+      style={
+        [
+          {
+            "fontSize": 12,
+          },
+          [
+            {
+              "color": "#ffffff",
+              "fontSize": 16,
+            },
+            {
+              "alignSelf": "center",
+              "flexShrink": 1,
+              "fontSize": 14,
+              "marginBottom": 10,
+            },
+          ],
+        ]
+      }
+      testID="btnSignup"
+    >
+      Don't have an account? 
+      <Text
+        style={
+          [
+            {
+              "fontSize": 14,
+              "fontWeight": "bold",
+            },
+            {
+              "textDecorationLine": "underline",
+            },
+          ]
+        }
+      >
+        Sign Up
+      </Text>
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`<LoginScreen /> rendering LoginScreen screen renders correctly 2`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "flexGrow": 1,
+    }
+  }
+>
+  <Modal
+    animationType="fade"
+    hardwareAccelerated={false}
+    presentationStyle="overFullScreen"
+    statusBarTranslucent={true}
+    transparent={true}
+    visible={false}
+  />
+  <View
+    style={
+      {
+        "backgroundColor": "#343434",
+        "flex": 1,
+        "justifyContent": "center",
+        "paddingHorizontal": 20,
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "backgroundColor": "#343434",
+          "flex": 1,
+          "justifyContent": "center",
+          "paddingHorizontal": 20,
+        }
+      }
+    >
+      <View
+        style={
+          {
+            "alignItems": "flex-start",
+            "flex": 0.3,
+            "justifyContent": "center",
+          }
+        }
+      >
+        <Text
+          style={
+            [
+              {
+                "fontSize": 14,
+                "fontWeight": "bold",
+              },
+              {
+                "color": "#ffffff",
+                "fontSize": 22,
+              },
+            ]
+          }
+        >
+          Login
+        </Text>
+        <Text
+          style={
+            [
+              {
+                "fontSize": 12,
+              },
+              {
+                "color": "#ffffff",
+              },
+            ]
+          }
+        >
+          Enter your credentials to access account
+        </Text>
+      </View>
+      <View
+        style={
+          {
+            "marginVertical": 10,
+          }
+        }
+      >
+        <TextInput
+          blurOnSubmit={false}
+          errorMsg="Email address required."
+          keyboardType="email-address"
+          onChangeText={[Function]}
+          onSubmitEditing={[Function]}
+          placeholder="Email"
+          placeholderTextColor="#ffffff"
+          returnKeyType="next"
+          style={
+            {
+              "borderColor": "#ffffff",
+              "borderRadius": 30,
+              "borderWidth": 2,
+              "color": "#ffffff",
+              "height": 55,
+              "overflow": "hidden",
+              "paddingLeft": 20,
+            }
+          }
+          testID="txtEmail"
+          value="abc@gmail.com"
+        />
+        <Text
+          style={
+            [
+              {
+                "fontSize": 12,
+              },
+              {
+                "color": "red",
+                "marginTop": 2,
+                "paddingLeft": 20,
+              },
+            ]
+          }
+        >
+          Email address required.
+        </Text>
+      </View>
+      <View
+        style={
+          {
+            "marginVertical": 10,
+          }
+        }
+      >
+        <TextInput
+          blurOnSubmit={true}
+          errorMsg="Password required."
+          keyboardType="default"
+          onChangeText={[Function]}
+          onSubmitEditing={[Function]}
+          placeholder="Password"
+          placeholderTextColor="#ffffff"
+          returnKeyType="next"
+          secureTextEntry={true}
+          style={
+            {
+              "borderColor": "#ffffff",
+              "borderRadius": 30,
+              "borderWidth": 2,
+              "color": "#ffffff",
+              "height": 55,
+              "overflow": "hidden",
+              "paddingLeft": 20,
+            }
+          }
+          testID="txtPassword"
+          value="123456"
+        />
+        <Text
+          style={
+            [
+              {
+                "fontSize": 12,
+              },
+              {
+                "color": "red",
+                "marginTop": 2,
+                "paddingLeft": 20,
+              },
+            ]
+          }
+        >
+          Password required.
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          [
+            {
+              "alignItems": "center",
+              "backgroundColor": "#ffffff",
+              "borderRadius": 30,
+              "borderWidth": 0.5,
+              "height": 55,
+              "justifyContent": "center",
+            },
+            {
+              "marginTop": 20,
+            },
+          ]
+        }
+        testID="btnSubmit"
+      >
+        <Text
+          style={
+            {
+              "fontSize": 14,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          LOGIN
+        </Text>
+      </View>
+    </View>
+    <Text
+      onPress={[Function]}
+      style={
+        [
+          {
+            "fontSize": 12,
+          },
+          [
+            {
+              "color": "#ffffff",
+              "fontSize": 16,
+            },
+            {
+              "alignSelf": "center",
+              "flexShrink": 1,
+              "fontSize": 14,
+              "marginBottom": 10,
+            },
+          ],
+        ]
+      }
+      testID="btnSignup"
+    >
+      Don't have an account? 
+      <Text
+        style={
+          [
+            {
+              "fontSize": 14,
+              "fontWeight": "bold",
+            },
+            {
+              "textDecorationLine": "underline",
+            },
+          ]
+        }
+      >
+        Sign Up
+      </Text>
+    </Text>
+  </View>
+</View>
+`;

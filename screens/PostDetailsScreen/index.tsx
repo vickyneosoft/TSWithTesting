@@ -1,5 +1,5 @@
-import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import React, {useCallback, useEffect, useMemo} from 'react';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import React, { useCallback, useEffect, useMemo } from 'react';
 import {
   ActivityIndicator,
   InteractionManager,
@@ -15,10 +15,10 @@ import colors from '../../constants/colors';
 import usePosts from '../../hooks/usePosts';
 
 const PostDetailsScreen = (props: NativeStackScreenProps<any, any>) => {
-  const {route} = useMemo(() => props, [props]);
+  const { route } = useMemo(() => props, [props]);
   const selectedPostId = useMemo(() => route.params?.postId, [route]);
 
-  const {error, isLoading, fetchPostDetails, postDetails} = usePosts();
+  const { error, isLoading, fetchPostDetails, postDetails } = usePosts();
 
   useEffect(() => {
     if (selectedPostId) {
@@ -52,7 +52,7 @@ const PostDetailsScreen = (props: NativeStackScreenProps<any, any>) => {
   if (isLoading) {
     return (
       <View style={styles.centerContainer}>
-        <ActivityIndicator size={'large'} color={colors.black} />
+        <ActivityIndicator size={'large'} color={colors.grey} />
       </View>
     );
   }

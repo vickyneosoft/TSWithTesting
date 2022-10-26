@@ -2,11 +2,11 @@
  * @format
  */
 
-import React, {useMemo} from 'react';
-import {StatusBar, useColorScheme} from 'react-native';
-import {SafeAreaProvider} from 'react-native-safe-area-context';
+import React, { useMemo } from 'react';
+import { StatusBar, useColorScheme } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-import {Colors} from 'react-native/Libraries/NewAppScreen';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 // navigator imports
 import MainNavigator from './navigation';

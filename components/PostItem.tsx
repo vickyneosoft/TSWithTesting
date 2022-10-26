@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import RegularText from './RegularText';
 
 type PostItemProps = {
@@ -7,7 +7,7 @@ type PostItemProps = {
 };
 
 const PostItem = (props: PostItemProps) => {
-  const {description} = props;
+  const { description } = props;
   return (
     <View style={styles.container}>
       <RegularText style={styles.descriptionText}>{description}</RegularText>
@@ -16,9 +16,10 @@ const PostItem = (props: PostItemProps) => {
 };
 
 const styles = StyleSheet.create({
-  container: {flexDirection: 'row', marginBottom: 5},
+  container: { flexDirection: 'row', marginBottom: 5 },
   descriptionText: {
     flex: 1,
+    fontSize: 16
   },
 });
 

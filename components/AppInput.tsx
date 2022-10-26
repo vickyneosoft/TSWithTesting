@@ -12,7 +12,10 @@ import {
   TextInput,
   TextInputProps,
   TextStyle,
+  View,
 } from 'react-native';
+import colors from '../constants/colors';
+import RegularText from './RegularText';
 
 export type AppInputAPIs = {
   setText: (value: string) => void;
@@ -21,6 +24,7 @@ export type AppInputAPIs = {
 };
 
 type AppInputProps = {
+  errorMsg?: string
   onChangeText: (inputId: string, enteredText: string) => void;
   onSubmitEditing: (inputId: string) => void;
 };
@@ -30,7 +34,7 @@ type AppInputProps = {
  */
 const AppInput = forwardRef(
   (props: AppInputProps & TextInputProps, ref: any) => {
-    const {onChangeText, onSubmitEditing, style, defaultValue} = props;
+    const { onChangeText, onSubmitEditing, style, defaultValue, errorMsg } = props;
 
     const [value, setValue] = useState<string>(defaultValue ?? '');
 
@@ -53,7 +57,7 @@ const AppInput = forwardRef(
 
     // * manage component state from parent component using ref
     const initHandler = useCallback(
-      () => ({setText, getText, focus}),
+      () => ({ setText, getText, focus }),
       [setText, getText, focus],
     );
 
@@ -81,16 +85,28 @@ const AppInput = forwardRef(
     );
 
     return (
-      <TextInput
-        returnKeyType="next"
-        keyboardType="default"
-        blurOnSubmit={false}
-        {...props}
-        ref={textInputRef}
-        onChangeText={onChangeTextHandler}
-        onSubmitEditing={onSubmitEditingHandler}
-        style={combinedStyles}
-      />
+      <View style={{ marginVertical: 10 }}>
+        <TextInput
+          returnKeyType="next"
+          keyboardType="default"
+          blurOnSubmit={false}
+          {...props}
+          placeholderTextColor={colors.white}
+          value={value}
+          ref={textInputRef}
+          onChangeText={onChangeTextHandler}
+          onSubmitEditing={onSubmitEditingHandler}
+          style={combinedStyles}
+        />
+        {errorMsg
+          ? <RegularText
+            style={styles.errorMsg}
+          >
+            {errorMsg}
+          </RegularText>
+          : null
+        }
+      </View>
     );
   },
 );
@@ -99,11 +115,17 @@ const styles = StyleSheet.create({
   container: {
     height: 55,
     borderRadius: 30,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: 2,
+    borderColor: colors.white,
     overflow: 'hidden',
-    marginBottom: 10,
     paddingLeft: 20,
+    color: colors.white
   },
+  errorMsg: {
+    color: colors.danger,
+    paddingLeft: 20,
+    marginTop: 2
+  }
 });
 
 export default AppInput;

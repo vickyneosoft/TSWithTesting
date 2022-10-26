@@ -1,4 +1,4 @@
-import {Alert} from 'react-native';
+import { Alert } from 'react-native';
 
 export const keyExtractorHandler = (_item: any, index: number) =>
   index.toString();
@@ -19,3 +19,7 @@ export const getUserConfirmation = (title: string, message: string) => {
     ]);
   });
 };
+
+export const isValidEmailAddress = (email: string) => {
+  return /^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,15}$/.test(email)
+}

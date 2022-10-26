@@ -1,26 +1,25 @@
-import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import React, {useCallback, useEffect, useMemo} from 'react';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import React, { useCallback, useEffect, useMemo } from 'react';
 import {
   ActivityIndicator,
   FlatList,
   InteractionManager,
-  Pressable,
   StyleSheet,
   View,
 } from 'react-native';
 import BoldText from '../../components/BoldText';
-import PostItem from '../../components/PostItem';
+import PostComponent from '../../components/PostComponent';
 import colors from '../../constants/colors';
 import usePosts from '../../hooks/usePosts';
-import {Post} from '../../types';
-import {keyExtractorHandler} from '../../utils/miscUtils';
+import { Post } from '../../types';
+import { keyExtractorHandler } from '../../utils/miscUtils';
 
 const PostsScreen = (props: NativeStackScreenProps<any, any>) => {
-  const {navigation} = props;
-  const {error, isLoading, posts, fetchPosts} = usePosts();
+  const { navigation } = props;
+  const { error, isLoading, posts, fetchPosts } = usePosts();
 
   useEffect(() => {
-    InteractionManager.runAfterInteractions(fetchPosts);
+    InteractionManager.runAfterInteractions(fetchPosts)
   }, [fetchPosts]);
 
   const onPostItemPressHandler = useCallback(
@@ -33,15 +32,13 @@ const PostsScreen = (props: NativeStackScreenProps<any, any>) => {
   );
 
   const renderItemHandler = useCallback(
-    ({item}: {item: Post}) => {
+    ({ item }: { item: Post }) => {
       try {
-        const {title, id} = item;
+        const { title, id } = item;
         return (
-          <Pressable
-            style={styles.itemStyle}
-            onPress={onPostItemPressHandler.bind(null, id)}>
-            <PostItem description={title} />
-          </Pressable>
+          <PostComponent
+            title={title}
+            onPress={onPostItemPressHandler.bind(null, id)} />
         );
       } catch (err: any) {
         console.log('Error : ', err.message);
@@ -61,7 +58,7 @@ const PostsScreen = (props: NativeStackScreenProps<any, any>) => {
     } else if (isLoading) {
       return (
         <View style={styles.noDataFoundContainer}>
-          <ActivityIndicator size={'large'} color={colors.black} />
+          <ActivityIndicator size={'large'} color={colors.grey} />
         </View>
       );
     } else {
@@ -75,6 +72,7 @@ const PostsScreen = (props: NativeStackScreenProps<any, any>) => {
 
   return (
     <FlatList
+      testID='lstPosts'
       data={posts}
       keyExtractor={keyExtractorHandler}
       renderItem={renderItemHandler}
@@ -88,21 +86,7 @@ const styles = StyleSheet.create({
   container: {
     minHeight: '100%',
     paddingBottom: 20,
-    backgroundColor: colors.white,
-  },
-  itemStyle: {
-    shadowColor: colors.black,
-    shadowOffset: {
-      width: 0,
-      height: 1,
-    },
-    shadowOpacity: 0.18,
-    shadowRadius: 1.0,
-    borderWidth: StyleSheet.hairlineWidth,
-    borderRadius: 5,
-    padding: 10,
-    marginTop: 10,
-    marginHorizontal: 10,
+    backgroundColor: colors.grey,
   },
   noDataFoundContainer: {
     flex: 1,

@@ -1,6 +1,6 @@
 export default {
-  EMAIL: 'EMAIL',
-  PASSWORD: 'PASSWORD',
+  EMAIL: 'email',
+  PASSWORD: 'password',
 
   SOMETHING_WENT_WRONG: 'Something went wrong please try again.',
 
